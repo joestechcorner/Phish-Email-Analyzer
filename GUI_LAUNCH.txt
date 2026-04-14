@@ -1,0 +1,78 @@
+====================================
+PHISHING ANALYZER - GUI VERSION
+====================================
+
+TO LAUNCH THE GUI WINDOW:
+------------------------
+
+Simply run:
+
+    python gui.py
+
+Or on some systems:
+
+    python3 gui.py
+
+
+WHAT YOU'LL SEE:
+---------------
+
+A professional window will open with:
+
+1. 📁 Browse button - Click to select your email file
+2. 🔍 Analyze button - Click to scan the email
+3. Large color-coded score display:
+   - GREEN score (0-30) = BENIGN
+   - ORANGE score (31-60) = SUSPICIOUS  
+   - RED score (61-100) = MALICIOUS
+4. Progress bar showing risk level
+5. Detailed findings in scrollable text area
+6. Recommended actions based on risk
+
+
+HOW TO USE:
+----------
+
+1. Launch: python gui.py
+2. Click "📁 Browse" to select an email file
+3. Click "🔍 ANALYZE EMAIL"
+4. View results in the window
+5. Click "🗑️ Clear Results" to analyze another email
+
+
+FILES NEEDED IN SAME FOLDER:
+---------------------------
+
+✓ gui.py (the GUI interface)
+✓ analyzer.py (the backend)
+✓ hard_keywords.txt
+✓ soft_keywords.txt
+✓ top-10000-domains.txt
+
+
+TEST IT:
+-------
+
+Try analyzing the sample files included:
+- sample_phishing.txt (should show RED - malicious)
+- sample_benign.txt (should show GREEN - benign)
+
+
+TROUBLESHOOTING:
+---------------
+
+Error: "No module named 'tkinter'"
+Solution: Tkinter comes with Python. If missing:
+  - Windows: Reinstall Python with "tcl/tk" option checked
+  - Mac: brew install python-tk
+  - Linux: sudo apt-get install python3-tk
+
+Error: "No module named 'analyzer'"
+Solution: Make sure analyzer.py is in the same folder as gui.py
+
+
+PREFER COMMAND LINE?
+-------------------
+
+You can still use the terminal version:
+    python main.py your_email.txt
