@@ -1,4 +1,40 @@
-# Phishing Email Analyzer
+📊 The Scoring System
+
+We have moved to a Point-Based Weighting System. Each indicator of compromise (IoC) adds a specific value to the total "Threat Score."
+Signal	Points	Description
+SPF Hard Fail	75	Authentication failed; highly likely spoofed.
+Brand Impersonation	50	URL contains known brands (e.g., "secure-microsoft.com").
+Reply-To Mismatch	50	The reply address differs significantly from the sender.
+Return-Path Mismatch	45	The "bounce-back" address does not match the source.
+IP Address as URL	45	Links using raw IPs (e.g., http://192.168.1.1) instead of domains.
+Typosquatting	40	Common character swaps meant to deceive the eye.
+SPF Softfail	40	Authentication is questionable but not explicitly blocked.
+Suspicious TLD	25	Use of .zip, .rocks, .support, etc.
+Keyword (High)	20	Urgency/Action (e.g., "Suspended", "Login Immediately").
+Missing DKIM	20	Lack of cryptographic signature.
+Keyword (Med/Low)	15/10	General suspicious phrasing.
+
+    [!TIP]
+    The Coordination Bonus: If the analyzer detects suspicious signals in the Sender Info, URL Reputation, AND Body Content all at once, the total score is multiplied by 1.4x. A multi-vector attack is a confirmed attack.
+
+🚀 How to Run
+
+    Prepare the Email: Save the suspicious email as an .eml or .txt file.
+
+    Execute:
+    Bash
+
+    python analyzer.py path/to/email.eml
+
+    Review the Output: The tool will provide a total percentage (0-100%) and a breakdown of every signal triggered, including VirusTotal's specific engine counts.
+
+⚠️ Important Notes
+
+    Rate Limits: If you are checking an email with 10 different domains using a free VT key, the script will take approximately 2.5 minutes to finish to avoid being blocked by VirusTotal.
+
+    Dependencies: No external pip installs are required! We use built-in urllib to keep the tool lightweight and portable.
+
+Stay safe out there—treat every link like it's a trap until the analyzer says otherwise.# Phishing Email Analyzer
 
 A Python-based tool for detecting phishing emails using weighted scoring and multiple analysis techniques.
 
