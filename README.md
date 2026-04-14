@@ -228,9 +228,8 @@ python main.py sample_benign.txt
 - May produce false positives for legitimate marketing emails
 - Does not check actual URL reputation (only domain whitelist)
 
-## Future Enhancements
+## Future Enhancements Coming
 
-Potential improvements:
 - Machine learning integration
 - Live URL reputation checking
 - Image analysis for embedded text
