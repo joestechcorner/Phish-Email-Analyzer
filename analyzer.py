@@ -11,9 +11,6 @@ VirusTotal API key setup (NEVER paste your key into this file):
 
   Option B — pass it at runtime:
       python analyzer.py email.eml --vt-key YOUR_KEY_HERE
-
-  The key is never written to disk or printed in any output.
-  Free-tier VT accounts are limited to 4 requests/minute and 500/day.
   The tool automatically paces requests to respect that limit.
 """
 
