@@ -250,7 +250,7 @@ python main.py sample_benign.txt
 
 ## Best Practices
 
-1. **Keep whitelists updated** - Regularly update your trusted domains list
+1. **Keep whitelists updated** - Regularly update your trusted domains & vendor lists
 2. **Monitor false positives** - Adjust weights if legitimate emails score too high
 3. **Review manually** - Always manually review suspicious emails (31-60 range)
 4. **Update keywords** - Add new phishing terms as they emerge
@@ -262,15 +262,12 @@ python main.py sample_benign.txt
 - Cannot detect zero-day phishing campaigns
 - Requires manual updates to keyword lists
 - May produce false positives for legitimate marketing emails
-- Does not check actual URL reputation (only domain whitelist)
 
 ## Future Enhancements Coming
 
 - Machine learning integration
-- Live URL reputation checking
 - Image analysis for embedded text
 - Header analysis for SPF/DKIM/DMARC
-- Integration with threat intelligence feeds
 - Database logging for pattern analysis
 - Web interface
 - API endpoint for automated scanning
